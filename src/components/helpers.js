@@ -166,15 +166,6 @@ export const parseOfflineMessage = (fields = {}) => {
 };
 export const normalizeDOMRect = ({ left, top, right, bottom }) => ({ left, top, right, bottom });
 
-
-export const isMobileDevice = () => {
-	if (window.innerWidth <= 800 && window.innerHeight >= 630) {
-		return true;
-	}
-	return false;
-};
-
-
 export const visibility = (() => {
 	if (typeof document.hidden !== 'undefined') {
 		return {
@@ -245,3 +236,5 @@ export const isActiveSession = () => {
 
 	return sessionId === firstSessionId;
 };
+
+export const isMobileDevice = () => window.innerWidth <= 800 && window.innerHeight >= 630;
